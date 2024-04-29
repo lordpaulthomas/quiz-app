@@ -1,0 +1,35 @@
+/* Hide the default radio button */
+/* .radio-container input[type="radio"] {
+  display: none;
+} */
+
+/* Style the custom radio button */
+.radio-container .radioBtn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Makes it circular */
+  border: 2px solid #5b21b6; /* Dark Purple */
+  position: relative;
+  cursor: pointer;
+}
+
+/* Style the inner circle */
+.radio-container .radioBtn::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #5b21b6; /* Dark Purple */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Initially hidden */
+  transition: transform 0.2s ease; /* Smooth animation */
+}
+
+/* Show inner circle when radio button is checked */
+.radio-container input[type="radio"]:checked + .radioBtn::after {
+  transform: translate(-50%, -50%) scale(1); /* Scale to full size */
+}

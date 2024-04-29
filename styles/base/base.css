@@ -1,0 +1,66 @@
+/* base.css */
+
+/* Import custom font */
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../../assets/fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Define global variables */
+:root {
+  --font-family: "Bebas Neue", sans-serif;
+  --primary-color: #5b21b6; /* Dark Purple */
+  --secondary-color: #292929; /* Dark Grey */
+  --text-color: #ffffff; /* White */
+  --text-muted: #a6a6a6; /* Light Grey */
+}
+
+/* Body and General Styles */
+body {
+  font-family: var(--font-family);
+  font-size: 2.55rem; /* var(--text-medium) */
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+p {
+  font-size: 3.2rem; /* var(--text-large) */
+}
+
+header {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 2.55rem; /* var(--text-medium) */
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+button:hover {
+  background-color: #4a1184; /* Darker shade of primary color */
+}
+

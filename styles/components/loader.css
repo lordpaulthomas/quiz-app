@@ -1,0 +1,22 @@
+/* loader.css */
+
+/* Define the loader animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Apply styles to the loader element */
+.loader::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #333; /* Change color as needed */
+  animation: spin 1s linear infinite; /* Apply the spin animation */
+  display: block;
+  margin: 0 auto;
+  background-image: url('../../assets/images/loading.gif'); /* Path to your loading GIF */
+  background-size: cover;
+}

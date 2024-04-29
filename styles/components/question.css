@@ -1,0 +1,72 @@
+/* question.css */
+
+/* Styles for question card 
+.question-card {
+ 
+  background-color: #ffffff; White 
+ 
+  color: black;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 70vw;
+
+}*/
+
+.question-card p {
+  text-align: center;
+}
+
+.question-card ul {
+  display: grid;
+  align-items: center;
+}
+
+/* Styles for question text */
+.question-text {
+  font-size: 3.2rem; /* var(--h2) */
+  margin-bottom: 20px;
+  color: yellow;
+  text-align: center;
+}
+
+/* Styles for answer options */
+.answer-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align */
+}
+
+.answer-option {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answer-option:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Styles for submit button */
+.submit-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 2.55rem; /* var(--text-medium) */
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #4a1184; /* Darker shade of primary color */
+}
