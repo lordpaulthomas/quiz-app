@@ -71,7 +71,12 @@ async function loadQuizQuestions(formattedData) {
                         const selectedAnswerIndex = parseInt(selectedOption.value);
                         const correctAnswerIndex = formattedData[currentQuestionIndex].correctAnswerIndex;
                         const isCorrect = selectedAnswerIndex === correctAnswerIndex;
-                        if (isCorrect) score++;
+                        if (isCorrect) {
+                            score++;
+                            console.log('correct')
+                        } else{
+                            console.log('incorrect')
+                        }
                         // Load the next question or handle quiz completion
                         currentQuestionIndex++;
                         if (currentQuestionIndex < formattedData.length) {
