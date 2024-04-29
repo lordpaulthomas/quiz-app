@@ -1,6 +1,7 @@
 /* dropdownMenu.css */
 
 .dropdown {
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,12 +9,25 @@
 }
 
 .dropdown-content{
-  margin-bottom: 20px; /* Adjust as needed */
-
+  font-family: var(--font-family);
+  font-size: var(--text-medium); 
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 
 
-.submit-button {
-  margin-top: 20px; /* Adjust as needed */
+.submit-category {
+  font-family: var(--font-family);
+  font-size: var(--text-medium); 
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
 }

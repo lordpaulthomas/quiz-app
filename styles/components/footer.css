@@ -1,0 +1,25 @@
+.footer {
+    border-top: 1px solid var(--border);
+    padding-block: var(--gutter-x-large);
+   text-align: center;
+  }
+  
+
+  
+  @media (max-width: 875px) {
+    .footer-content {
+      flex-direction: column-reverse;
+      gap: var(--gutter-small);
+    }
+    .footer-text {
+      text-align: center;
+    }
+  }
+  
+  .footer-text {
+    font-size: var(--text-small);
+  }
+  
+  .footer-text a {
+    color: var(--sub);
+  }

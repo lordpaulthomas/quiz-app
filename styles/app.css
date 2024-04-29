@@ -5,3 +5,5 @@
 @import '../styles/components/radioBtn.css';
 @import '../styles/components/result.css';
 @import './base/base.css';
+@import './components/header.css';
+@import './components/footer.css';
