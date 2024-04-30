@@ -136,6 +136,11 @@ html {
     font-size: 68%;
   }
 }
+@media (max-width: 480px) {
+  html {
+    overflow-y: hidden;
+  }
+}
 
 body {
   font-family: var(--font-family);
