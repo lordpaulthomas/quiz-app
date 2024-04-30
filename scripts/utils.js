@@ -10,8 +10,12 @@ function formatData(data) {
         // Find the index of the correct answer within the shuffledAnswers array
         const correctAnswerIndex = shuffledAnswers.findIndex(answer => answer === item.correctAnswer);
 
+        // Format Category
+        const category = item.category.replace(/_/g, ' '); // Replace underscores with spaces
+        const formattedCategory = category.replace(/\b\w/g, char => char.toUpperCase()); // Capitalize each word
+
         return {
-            category: item.category,
+            category: formattedCategory,
             question: item.question.text,
             answers: shuffledAnswers,
             correctAnswerIndex: correctAnswerIndex // Assign the index instead of the answer itself

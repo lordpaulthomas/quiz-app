@@ -22,12 +22,20 @@ async function loadQuizQuestions(formattedData) {
                 quizContainer.innerHTML = '';
 
                 // Create elements to display the question
+                const categoryDiv = document.createElement('div');
+                const categoryText = document.createElement('h2');
+                categoryText.textContent = `${formattedData[currentQuestionIndex].category}`
+                categoryDiv.appendChild(categoryText);
+                quizContainer.appendChild(categoryDiv);
+                
+
                 const questionDiv = document.createElement('div');
                 const questionHeader = document.createElement('h4');
                 questionHeader.textContent = `Question ${currentQuestionIndex + 1}`;
                 const questionText = document.createElement('p');
                 questionText.className = 'question-text';
                 questionText.textContent = formattedData[currentQuestionIndex].question;
+                
                 questionDiv.appendChild(questionHeader);
                 questionDiv.appendChild(questionText);
                 quizContainer.appendChild(questionDiv);

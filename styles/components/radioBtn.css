@@ -13,6 +13,7 @@
   position: relative;
   cursor: pointer;
   margin-right: 1rem;
+  
 }
 
 /* Style the inner circle */
@@ -32,5 +33,6 @@
 
 /* Show inner circle when radio button is checked */
 .radio-container input[type="radio"]:checked + .radioBtn::after {
+  align-items: left;
   transform: translate(-50%, -50%) scale(1); /* Scale to full size */
 }

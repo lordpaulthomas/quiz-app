@@ -23,6 +23,7 @@
 .question-card ul {
   display: grid;
   align-items: center;
+  text-align: center;
 }
 
 /* Styles for question text */
@@ -38,9 +39,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center align */
+
 }
 
 .answer-option {
+  text-align: center;
   margin: 10px;
   padding: 10px;
   border: 1px solid var(--primary-color);
