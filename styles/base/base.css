@@ -123,6 +123,7 @@ html {
   font-family: "Bebas Neue";
   box-sizing: border-box;
   scroll-padding-top: var(--scroll-padding);
+  overscroll-behavior-y: contain; /* Prevent vertical bounce */
 }
 
 @media (max-width: 1200px) {
@@ -150,6 +151,7 @@ body {
   line-height: 1.4;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  overscroll-behavior-y: contain; /* Prevent vertical bounce */
 }
 
 picture,
