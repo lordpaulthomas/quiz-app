@@ -73,6 +73,10 @@
 }
 
 @media (max-width: 480px){
+  .question-card{
+    max-height: 100vh;
+    max-width: 99vw;
+  }
   .question-text{
     margin: 1rem;
     padding: rem;
