@@ -6,19 +6,19 @@
   }
   
   .result-title {
-    font-size: var(--h2);
-    color: #000; /* Black color */
+    font-size: var(--h1);
+    color: var(--text-color); /* Black color */
   }
   
   .result-description {
-    font-size: var(--h3);
+    font-size: var(--h2);
     color: #333; /* Dark grey color */
   }
   
   .result-score {
-    font-size: var(--h3);
+    font-size: var(--h2);
     font-weight: bold;
-    color: #6a0dad; /* Purple color */
+    color: var(--text-color); /* Purple color */
   }
   
   .result-feedback {
@@ -46,3 +46,17 @@
     background-color: #4b077d; /* Darker purple color on hover */
   }
   
+  @media (max-width: 480px){
+    
+   .result-container{
+    margin: 0;
+   }
+    
+  .result-title {
+    font-size: 3rem;
+  }
+  .result-score {
+    font-size: 4rem;
+  
+  }
+}

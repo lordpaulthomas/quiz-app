@@ -9,12 +9,12 @@ function showResult(score, totalQuestions) {
     // Create result title element
     const resultTitle = document.createElement('div');
     resultTitle.classList.add('result-title');
-    resultTitle.textContent = 'Quiz Result';
+    resultTitle.textContent = 'Your Score:';
 
     // Create result score element
     const resultScore = document.createElement('div');
     resultScore.classList.add('result-score');
-    resultScore.textContent = `Your score: ${score} / ${totalQuestions}`;
+    resultScore.textContent = `${score} / ${totalQuestions}`;
 
     // Append elements to result container
     resultContainer.appendChild(resultTitle);

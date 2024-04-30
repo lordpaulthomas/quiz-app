@@ -4,7 +4,7 @@
 .question-card {
  
   background-color: #ffffff; 
- 
+  display: none;
   color: black;
   border: 1px solid var(--primary-color);
   border-radius: 10px;
@@ -69,4 +69,20 @@
 
 .submit-button:hover {
   background-color: #4a1184; /* Darker shade of primary color */
+}
+
+@media (max-width: 480px){
+  .question-text{
+    margin: 1rem;
+    padding: rem;
+    font-size: 1.5rem;
+  }
+  .answer-options {
+    font-size: 1.2rem;
+  }
+
+  .submit-button{
+    font-size: 50%;
+  
+  }
 }

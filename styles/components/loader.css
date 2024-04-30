@@ -7,16 +7,16 @@
 }
 
 /* Apply styles to the loader element */
-.loader::after {
+/* .loader::after {
   content: '';
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 3px solid rgba(0, 0, 0, 0.1);
-  border-top-color: #333; /* Change color as needed */
-  animation: spin 1s linear infinite; /* Apply the spin animation */
+  border-top-color: #333; 
+  animation: spin 1s linear infinite; 
   display: block;
   margin: 0 auto;
-  background-image: url('../../assets/images/loading.gif'); /* Path to your loading GIF */
+  background-image: url('../../assets/loading.gif'); 
   background-size: cover;
-}
+} */

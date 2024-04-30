@@ -8,7 +8,7 @@ async function fetchQuizQuestions(category) {
         const data = await response.json();
         return data;
     } catch (error) {
-        handleError('Error fetching weather data:', error);
+        handleError('Error fetching data:', error);
         return null;
     }
 }

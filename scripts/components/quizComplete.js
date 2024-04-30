@@ -1,11 +1,15 @@
 // quizComplete.js
 
-import { showResult } from "./components/result.js";
+import { showResult } from "./result.js";
 
 function handleQuizComplete(score, totalQuestions) {
     // Hide the quiz section
     const quizSection = document.getElementById('question-card');
     quizSection.style.display = 'none';
+
+    // Show header section
+    const headerTag = document.getElementById('header');
+    headerTag.style.display = 'inherit';
 
     // Show the result section
     const resultSection = document.querySelector('.result-card');

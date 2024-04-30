@@ -9,7 +9,7 @@ function getCategory() {
         
             // Get the selected category from the dropdown menu
             const selectedCategory = document.getElementById('select').value;
-        
+            
             // Resolve the promise with the selected category
             resolve(selectedCategory);
         });

@@ -4,7 +4,7 @@ import { handleError, formatData } from "./utils.js";
 import { fetchQuizQuestions } from "./api.js";
 import { loadQuizQuestions } from "./components/question.js";
 import { getCategory } from "./components/dropdownMenu.js";
-import { handleQuizComplete } from "./quizComplete.js"; // Import handleQuizComplete function
+import { handleQuizComplete } from "./components/quizComplete.js"; // Import handleQuizComplete function
 import { quizStart, quizEnd } from "./ui.js"; // Import the UI-related functions
 
 // Define an async function to fetch and process quiz questions

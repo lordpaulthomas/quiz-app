@@ -1,7 +1,7 @@
 import { handleError } from "../utils.js";
 import { showLoader, hideLoader } from "./loader.js";
-import { handleQuizComplete } from "../quizComplete.js";
-import { showResult } from "./result.js";
+import { handleQuizComplete } from "./quizComplete.js";
+import { answerIsCorrect, answerIsWrong } from "./showAnswer.js";
 
 async function loadQuizQuestions(formattedData) {
     try {
@@ -12,9 +12,12 @@ async function loadQuizQuestions(formattedData) {
         // Function to load each question
         function loadQuestion(formattedData, currentQuestionIndex) {
             try {
+                // Hide Header
+                const headerTag = document.getElementById("header");
+                headerTag.style.display = 'none';
                 // Get the quiz container element
                 const quizContainer = document.getElementById("question-card");
-
+                quizContainer.style.display = 'inherit';
                 // Clear the quiz container
                 quizContainer.innerHTML = '';
 
@@ -72,23 +75,37 @@ async function loadQuizQuestions(formattedData) {
                         const correctAnswerIndex = formattedData[currentQuestionIndex].correctAnswerIndex;
                         const isCorrect = selectedAnswerIndex === correctAnswerIndex;
                         if (isCorrect) {
-                            score++;
-                            console.log('correct')
-                        } else{
-                            console.log('incorrect')
-                        }
-                        // Load the next question or handle quiz completion
-                        currentQuestionIndex++;
-                        if (currentQuestionIndex < formattedData.length) {
-                            loadQuestion(formattedData, currentQuestionIndex);
+                            answerIsCorrect(correctAnswerIndex, () => {
+                                score++;
+                                console.log('correct');
+                                // Load the next question or handle quiz completion
+                                currentQuestionIndex++;
+                                if (currentQuestionIndex < formattedData.length) {
+                                    loadQuestion(formattedData, currentQuestionIndex);
+                                } else {
+                                    console.log('Quiz completed!');
+                                    console.log('Score: ', score / formattedData.length);
+                                    // Call the quiz complete function
+                                    handleQuizComplete(score, formattedData.length);
+                                }
+                            });
                         } else {
-                            console.log('Quiz completed!');
-                            console.log('Score: ', score / formattedData.length);
-                            // Call the quiz complete function
-                            handleQuizComplete(score, formattedData.length);
+                            answerIsWrong(selectedAnswerIndex, correctAnswerIndex, () => {
+                                console.log('incorrect');
+                                // Load the next question or handle quiz completion
+                                currentQuestionIndex++;
+                                if (currentQuestionIndex < formattedData.length) {
+                                    loadQuestion(formattedData, currentQuestionIndex);
+                                } else {
+                                    console.log('Quiz completed!');
+                                    console.log('Score: ', score / formattedData.length);
+                                    // Call the quiz complete function
+                                    handleQuizComplete(score, formattedData.length);
+                                }
+                            });
                         }
                     } else {
-                        console.log('No option selected');
+                        alert('No option selected');
                     }
                 });
                 quizContainer.appendChild(submitButton);
