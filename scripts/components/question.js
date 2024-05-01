@@ -32,7 +32,7 @@ async function loadQuizQuestions(formattedData) {
                 const questionDiv = document.createElement('div');
                 const questionHeader = document.createElement('h4');
                 questionHeader.textContent = `Question ${currentQuestionIndex + 1}`;
-                questionHeader.className = 'question-header'
+                questionHeader.className = 'question-header';
                 const questionText = document.createElement('p');
                 questionText.className = 'question-text';
                 questionText.textContent = formattedData[currentQuestionIndex].question;

@@ -107,6 +107,12 @@
   .answer-options {
     font-size: 2.2rem;
   }
+
+  .answer-option:hover{
+    background-color: initial;
+    color: initial;
+  }
+  
   .category {
     font-size: 2rem;
   }
