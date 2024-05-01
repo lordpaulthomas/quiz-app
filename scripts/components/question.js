@@ -24,14 +24,15 @@ async function loadQuizQuestions(formattedData) {
                 // Create elements to display the question
                 const categoryDiv = document.createElement('div');
                 const categoryText = document.createElement('h2');
-                categoryText.textContent = `${formattedData[currentQuestionIndex].category}`
+                categoryDiv.className = 'category';
+                categoryText.textContent = `${formattedData[currentQuestionIndex].category}`;
                 categoryDiv.appendChild(categoryText);
                 quizContainer.appendChild(categoryDiv);
-                
 
                 const questionDiv = document.createElement('div');
                 const questionHeader = document.createElement('h4');
                 questionHeader.textContent = `Question ${currentQuestionIndex + 1}`;
+                questionHeader.className = 'question-header'
                 const questionText = document.createElement('p');
                 questionText.className = 'question-text';
                 questionText.textContent = formattedData[currentQuestionIndex].question;
@@ -44,82 +45,61 @@ async function loadQuizQuestions(formattedData) {
                 const optionsList = document.createElement('ul');
                 formattedData[currentQuestionIndex].answers.forEach((answer, index) => {
                     const option = document.createElement('li');
-                    option.className = 'answer-option'
+                    option.className = 'answer-option';
 
-                    // Create a container for the radio button and label
-                    const radioContainer = document.createElement('div');
-                    radioContainer.classList.add('radio-container');
+                    const optionDiv = document.createElement('div');
+                    optionDiv.textContent = answer;
+                    optionDiv.classList.add('option-div');
 
-                    const radioBtn = document.createElement('input');
-                    radioBtn.type = 'radio';
-                    radioBtn.name = 'quizOption';
-                    radioBtn.value = index; // Use index as value to identify the selected option
-                    radioBtn.className = 'radioBtn';
+                    optionDiv.addEventListener('click', () => {
+                        handleAnswerSelection(index);
+                    });
 
-                    const innerCircle = document.createElement('span');
-                    innerCircle.className = 'inner-circle'
-
-                    radioContainer.appendChild(radioBtn);
-                    radioContainer.appendChild(innerCircle);
-
-
-                    const label = document.createElement('label');
-                    label.textContent = answer;
-                    radioContainer.appendChild(label);
-
-                    option.appendChild(radioContainer);
+                    option.appendChild(optionDiv);
                     optionsList.appendChild(option);
                 });
                 quizContainer.appendChild(optionsList);
 
-                // Create submit button
-                const submitButton = document.createElement('button');
-                submitButton.textContent = 'Submit';
-                submitButton.addEventListener('click', () => {
-                    const selectedOption = document.querySelector('input[name="quizOption"]:checked');
-                    if (selectedOption) {
-                        // Handle user's selection
-                        const selectedAnswerIndex = parseInt(selectedOption.value);
-                        const correctAnswerIndex = formattedData[currentQuestionIndex].correctAnswerIndex;
-                        const isCorrect = selectedAnswerIndex === correctAnswerIndex;
-                        if (isCorrect) {
-                            answerIsCorrect(correctAnswerIndex, () => {
-                                score++;
-                                console.log('correct');
-                                // Load the next question or handle quiz completion
-                                currentQuestionIndex++;
-                                if (currentQuestionIndex < formattedData.length) {
-                                    loadQuestion(formattedData, currentQuestionIndex);
-                                } else {
-                                    console.log('Quiz completed!');
-                                    console.log('Score: ', score / formattedData.length);
-                                    // Call the quiz complete function
-                                    handleQuizComplete(score, formattedData.length);
-                                }
-                            });
-                        } else {
-                            answerIsWrong(selectedAnswerIndex, correctAnswerIndex, () => {
-                                console.log('incorrect');
-                                // Load the next question or handle quiz completion
-                                currentQuestionIndex++;
-                                if (currentQuestionIndex < formattedData.length) {
-                                    loadQuestion(formattedData, currentQuestionIndex);
-                                } else {
-                                    console.log('Quiz completed!');
-                                    console.log('Score: ', score / formattedData.length);
-                                    // Call the quiz complete function
-                                    handleQuizComplete(score, formattedData.length);
-                                }
-                            });
-                        }
-                    } else {
-                        alert('No option selected');
-                    }
-                });
-                quizContainer.appendChild(submitButton);
+                // // Create submit button
+                // const submitButton = document.createElement('button');
+                // submitButton.textContent = 'Submit';
+                // submitButton.addEventListener('click', () => {
+                //     // Handle submission
+                // });
+                // quizContainer.appendChild(submitButton);
             } catch (error) {
                 // Handle any errors that occur during loading questions
                 handleError(error);
+            }
+        }
+
+        // Function to handle user's answer selection
+        function handleAnswerSelection(selectedIndex) {
+            const correctIndex = formattedData[currentQuestionIndex].correctAnswerIndex;
+            if (selectedIndex === correctIndex) {
+                // User selected the correct answer
+                answerIsCorrect(correctIndex, () => {
+                    score++;
+                    // Load the next question or handle quiz completion
+                    loadNextQuestion();
+                });
+            } else {
+                // User selected the wrong answer
+                answerIsWrong(selectedIndex, correctIndex, () => {
+                    // Load the next question or handle quiz completion
+                    loadNextQuestion();
+                });
+            }
+        }
+
+        // Function to load the next question or handle quiz completion
+        function loadNextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < formattedData.length) {
+                loadQuestion(formattedData, currentQuestionIndex);
+            } else {
+                // Quiz completed
+                handleQuizComplete(score, formattedData.length);
             }
         }
 

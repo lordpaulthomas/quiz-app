@@ -9,7 +9,7 @@
 }
 
 .dropdown-content{
-  font-family: var(--font-family);
+  font-family: "ADLaMDisplay";
   font-size: var(--text-medium); 
   color: var(--text-color);
   background-color: var(--secondary-color);

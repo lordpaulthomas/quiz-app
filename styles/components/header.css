@@ -1,5 +1,6 @@
 header {
-    font-size: var(--text-large);
+ 
+    font-size: var(--h1);
     margin: 2.5rem;
 }
 

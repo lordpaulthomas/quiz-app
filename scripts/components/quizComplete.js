@@ -23,6 +23,9 @@ function handleQuizComplete(score, totalQuestions) {
     playAgainButton.textContent = 'Play Again';
     playAgainButton.id = 'play-again';
 
+    const showFooter = document.querySelector('.footer');
+    showFooter.style.display = 'inherit';
+
     // Add event listener to the play again button
     playAgainButton.addEventListener('click', () => {
         // Reset the quiz by reloading the page
