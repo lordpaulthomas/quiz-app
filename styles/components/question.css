@@ -88,6 +88,20 @@
   background-color: #4a1184; /* Darker shade of primary color */
 }
 
+/* Screen Lock*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Semi-transparent black */
+  z-index: 9999; /* Ensure it's above other content */
+  pointer-events: auto; /* This line prevents interactions with underlying content */
+  /* Additional styles like locking scroll can be added here */
+}
+
+
 @media (max-width: 480px){
   .question-card{
     max-height: 100vh;
@@ -122,3 +136,4 @@
   
   }
 }
+
