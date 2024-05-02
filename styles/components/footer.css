@@ -1,13 +1,15 @@
 .footer {
+    display: none;
     border-top: 1px solid var(--border);
     padding-block: var(--gutter-x-large);
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
   
-  .footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+
   
   @media (max-width: 875px) {
     .footer-content {
@@ -25,10 +27,4 @@
   
   .footer-text a {
     color: var(--sub);
-  }
-  
-  .footer-links {
-    display: flex;
-    gap: var(--gutter-small);
-    list-style-type: none;
   }
