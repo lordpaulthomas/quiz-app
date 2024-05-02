@@ -2,7 +2,15 @@ header {
  
     font-size: var(--h1);
     margin: 2.5rem;
+
+    text-shadow:
+    -0.2rem -0.2rem 0 var(--primary-color),
+    0.2rem -0.2rem 0 var(--primary-color),
+    -0.2rem 0.2rem 0 var(--primary-color),
+    0.2rem 0.2rem 0 var(--primary-color); 
 }
+
+
 
 @media (max-width: 480px){
 

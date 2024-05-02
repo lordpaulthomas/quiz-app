@@ -16,12 +16,18 @@
   line-height: 1.4;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  border: 2px solid var(--primary-color);
+  text-shadow:
+  -0.2rem -0.2rem 0 var(--primary-color),
+  0.2rem -0.2rem 0 var(--primary-color),
+  -0.2rem 0.2rem 0 var(--primary-color),
+  0.2rem 0.2rem 0 var(--primary-color); 
 }
 
 
 
 .submit-category {
-  font-family: var(--font-family);
+  font-family: "ADLaMDisplay";
   font-size: var(--text-medium); 
   background-color: var(--primary-color);
   color: #ffffff;
